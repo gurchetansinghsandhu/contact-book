@@ -1,0 +1,58 @@
+# contact book
+
+
+contacts  = {}
+
+while True:
+    print('contact book ')
+    print('1. create contact')
+    print('2. view contact')
+    print('3. update contact')
+    print('4. delete contact')
+    print('5. Exit!')
+
+    choice = input("enter your choice ")
+
+    if choice =='1':
+        name = input('enter your name =  ')
+        if name in contacts:
+            print(f'conatct name {name} already exists 😔💔')
+
+        else:
+            age  = input('enter your age  ')
+            email = input('enter your email ID')
+            mobile = int(input('enter your mobile no. '))
+            contacts[name] = {'age ': int(age), 'email' : email, 'mobile' : int(mobile)}
+            print(f'contact info has been added successfully!')
+
+    elif choice == '2':
+        name = input('enter contact name to view it --> ')
+        if name in contacts:
+            contact = contacts[name]
+            print(f'name : {name}, age : {age}, mobile number : {mobile}')
+        else:
+            print('contact not found')
+
+    elif choice == '3':
+        name = input('enter contact name to update it --> ')
+        if name in contacts:
+
+          age  = input('enter your updated age  ')
+          email = input('enter your updated email ID')
+          mobile = int(input('enter updated your mobile no. '))
+          contacts[name] =  {'age ': int(age), 'email' : email, 'mobile' : int(mobile)}
+        else:
+            print('provided contact does not exist!')
+
+    
+
+    elif choice == '4':
+        name = input('enter contact name to delete it --> ')
+        if name in contacts:
+            del contacts[name]
+            print(f'contact name {name} has been deleted ')
+        else:
+            print('provided contact does not exist!')
+
+    else:
+        print('good bye...  closing the code')        
